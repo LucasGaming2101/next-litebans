@@ -83,34 +83,34 @@ export const MobileNav = ({ dictionaries, bans, mutes, warns, kicks}: MobileNavP
           <nav className="flex flex-col space-y-3">
           <MobileLink 
             href="/bans"
-            className={cn("transition-colors pr-12 inline-flex w-full", pathname.startsWith("/bans") ? "hover:text-foreground text-foreground/80" : "hover:text-foreground/80 text-foreground/60")}
+            className={cn("transition-colors pr-12 inline-flex w-full", pathname && pathname.startsWith("/bans") ? "hover:text-foreground text-foreground/80" : "hover:text-foreground/80 text-foreground/60")}
             onOpenChange={setOpen}
           >
-            {dictionary.words.bans.plural}<Badge variant={pathname.startsWith("/bans") ? "default" : "secondary"} className="!px-1 !py-0 ml-auto">{bans}</Badge>
+            {dictionary.words.bans.plural}<Badge variant={pathname && pathname.startsWith("/bans") ? "default" : "secondary"} className="!px-1 !py-0 ml-auto">{bans}</Badge>
           </MobileLink>
 
           <MobileLink 
             href="/mutes"
-            className={cn("transition-colors pr-12 inline-flex w-full", pathname.startsWith("/bans") ? "hover:text-foreground text-foreground/80" : "hover:text-foreground/80 text-foreground/60")}
+            className={cn("transition-colors pr-12 inline-flex w-full", pathname && pathname.startsWith("/bans") ? "hover:text-foreground text-foreground/80" : "hover:text-foreground/80 text-foreground/60")}
             onOpenChange={setOpen}
           >
-            {dictionary.words.mutes.plural} <Badge variant={pathname.startsWith("/mutes") ? "default" : "secondary"} className="!px-1 !py-0 ml-auto">{mutes}</Badge>
+            {dictionary.words.mutes.plural} <Badge variant={pathname && pathname.startsWith("/mutes") ? "default" : "secondary"} className="!px-1 !py-0 ml-auto">{mutes}</Badge>
           </MobileLink>
           
           <MobileLink 
             href="/warns"
-            className={cn("transition-colors pr-12 inline-flex w-full", pathname.startsWith("/bans") ? "hover:text-foreground text-foreground/80" : "hover:text-foreground/80 text-foreground/60")}
+            className={cn("transition-colors pr-12 inline-flex w-full", pathname && pathname.startsWith("/bans") ? "hover:text-foreground text-foreground/80" : "hover:text-foreground/80 text-foreground/60")}
             onOpenChange={setOpen}
           >
-            {dictionary.words.warns.plural} <Badge variant={pathname.startsWith("/warns") ? "default" : "secondary"} className="!px-1 !py-0 ml-auto">{warns}</Badge>
+            {dictionary.words.warns.plural} <Badge variant={pathname && pathname.startsWith("/warns") ? "default" : "secondary"} className="!px-1 !py-0 ml-auto">{warns}</Badge>
           </MobileLink>
           
           <MobileLink 
             href="/kicks"
-            className={cn("transition-colors pr-12 inline-flex w-full", pathname.startsWith("/bans") ? "hover:text-foreground text-foreground/80" : "hover:text-foreground/80 text-foreground/60")}
+            className={cn("transition-colors pr-12 inline-flex w-full", pathname && pathname.startsWith("/bans") ? "hover:text-foreground text-foreground/80" : "hover:text-foreground/80 text-foreground/60")}
             onOpenChange={setOpen}
           >
-            {dictionary.words.kicks.plural} <Badge variant={pathname.startsWith("/kicks") ? "default" : "secondary"} className="!px-1 !py-0 ml-auto">{kicks}</Badge>
+            {dictionary.words.kicks.plural} <Badge variant={pathname && pathname.startsWith("/kicks") ? "default" : "secondary"} className="!px-1 !py-0 ml-auto">{kicks}</Badge>
           </MobileLink>
           </nav>
         </ScrollArea>

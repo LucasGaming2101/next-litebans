@@ -32,10 +32,10 @@ export const TablePagination = ({
   const dictionary = useLang().dictionary.pagination;
 
   useEffect(() => {
-    const param = searchParams.get("page"); 
+    const param = searchParams?.get("page"); 
     if (param === actualPage.toString() || (actualPage == 1 && !param)) return;
 
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(searchParams?.toString());
     params.set("page", actualPage.toString());
     window.history.replaceState({}, "", `${pathname}?${params.toString()}`);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,7 +43,7 @@ export const TablePagination = ({
 
   const createQueryString = useCallback(
     (page: number) => {
-      const newParams = new URLSearchParams(searchParams.toString())
+      const newParams = new URLSearchParams(searchParams?.toString())
       newParams.set('page', page.toString())
  
       return newParams.toString()

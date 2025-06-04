@@ -21,7 +21,7 @@ export const AvatarName = ({ query, name, uuid, console }: AvatarName) => {
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString())
+      const params = new URLSearchParams(searchParams?.toString() || "")
       params.set(name, value)
       params.delete("page")
  

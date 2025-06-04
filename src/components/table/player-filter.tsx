@@ -23,12 +23,12 @@ interface PlayerFilter {
 export const PlayerFilter = ({ type, name, uuid, console }: PlayerFilter) => {
   const { dictionary } = useLang();
   const searchParams = useSearchParams();
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const router = useRouter();
   
   const createRemovedQueryString = useCallback(
     (name: string) => {
-      const params = new URLSearchParams(searchParams.toString())
+      const params = new URLSearchParams(searchParams?.toString())
       params.delete(name)
       params.delete("page")
  
@@ -39,7 +39,7 @@ export const PlayerFilter = ({ type, name, uuid, console }: PlayerFilter) => {
   const handleClick = () => {
     const query = createRemovedQueryString(type);
     if (query === "") {
-      router.push(pathname);
+      if (pathname) router.push(pathname);
       router.refresh();
     } else {
       router.push(`${pathname}?${query}`);
